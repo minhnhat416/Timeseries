@@ -17,6 +17,14 @@ print("Dataframe after filtering: ", len(series_filter.index))
 
 # series.to_csv('data_filter.csv', index=False) # Export data after filter
 
+
+print(series_filter.info()) # Information About the Data
+
+# Descriptive Statistics about the Data
+varible_describe =['close','average', 'adClose', 'adAverage','nmVolume',
+                   'nmValue', 'ptVolume', 'ptValue', 'change', 'adChange', 'pctChange']
+print(series_filter[varible_describe].describe())
+
 # 2.  Exploring Time Series Data
 
 # II. Feature Engineering
