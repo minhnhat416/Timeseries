@@ -1,7 +1,7 @@
 # I Data Preparation
 # 1. Load Time Series Data
 
-from pandas import read_csv
+from pandas import read_csv # Load libraries
 
 series = read_csv(r'D:\UEL\Nam_3\Hoc_ki_6\timeseries\Data\Taichinh.csv', header=0, index_col=0, parse_dates=True,
 squeeze=True)
@@ -10,11 +10,12 @@ print(series.head())
 print(series.columns)
 print("Dataframe before filtering: ", len(series.index))
 
+# filter data by 5 codes
 code_need = ['E1VFVN30', 'FUESSV50', 'FUCTVGF3','FUCVREIT', 'HCM']
-series = series[series.code.isin(code_need)]
-print("Dataframe after filtering: ", len(series.index))
+series_filter = series[series.code.isin(code_need)]
+print("Dataframe after filtering: ", len(series_filter.index))
 
-
+# series.to_csv('data_filter.csv', index=False) # Export data after filter
 
 # 2.  Exploring Time Series Data
 
