@@ -3,7 +3,7 @@
 
 from pandas import read_csv # Load libraries
 
-series = read_csv(r'Taichinh.csv', header=0, index_col=0, parse_dates=True,
+series = read_csv(r"D:\\UEL\\nam3\\Ki_2\\Time_Series\\Taichinh.csv", header=0, index_col=0, parse_dates=True,
 squeeze=True)
 series.insert(0,'row_id',range(0, 0 + len(series)), allow_duplicates=False) # Add row_id column to dataset
 print(series.head())
